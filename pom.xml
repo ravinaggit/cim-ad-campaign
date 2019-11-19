@@ -25,13 +25,13 @@
 	    </snapshotRepository>
   </distributionManagement>
   
-   <repositories>
+   <!-- <repositories>
 		<repository>
 			<id>central</id>
 			<name>artifactory.autozone.com-releases</name>
 			<url>https://artifactory.autozone.com:443/artifactory/libs-release</url>
 		</repository>
-	</repositories>
+	</repositories> -->
   
 	<parent>
 		<groupId>org.springframework.boot</groupId>
