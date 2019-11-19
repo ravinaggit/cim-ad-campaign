@@ -12,18 +12,19 @@
 	<name>cim-ad-campaign</name>
 	<description>Demo project for Spring Boot</description>
 
-	<!-- <distributionManagement>
-		<repository>
-			<id>releases</id>
-			<name>artifactory.autozone.com-releases</name>
-			<url>http://localhost:8081/repository/maven-releases</url>
-		</repository>
-		<snapshotRepository>
-			<id>snapshots</id>
-			<name>artifactory.autozone.com-snapshots</name>
-			<url>http://localhost:8081/repository/maven-snapshots</url>
-		</snapshotRepository>
-	</distributionManagement> -->
+	<distributionManagement>
+	    <repository>
+	        <id>central</id>
+	        <name>artifactory.autozone.com-releases</name>
+	        <url>https://artifactory.autozone.com:443/artifactory/libs-release</url>
+	    </repository>
+	      <snapshotRepository>
+	        <id>snapshots</id>
+	        <name>artifactory.autozone.com-snapshots</name>
+	        <url>https://artifactory.autozone.com:443/artifactory/libs-snapshot</url>
+	    </snapshotRepository>
+  </distributionManagement>
+  
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
