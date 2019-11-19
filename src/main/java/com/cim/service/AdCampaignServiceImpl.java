@@ -52,7 +52,7 @@ public class AdCampaignServiceImpl implements AdCampaignService {
 
 	@Override
 	public AdInfo processExistingCampaign(Optional<AdInfo> existingAd, AdInfo adInfo) {
-		existingAd.ifPresent( s -> adCampaignRepository.delete(s.getPartner()));
+		existingAd.ifPresent( s -> adCampaignRepository.delete(s));
 		adInfo.setDateTime(LocalDateTime.now());
 		AdInfo savedAdInfo = adCampaignRepository.save(adInfo);
 
@@ -61,13 +61,13 @@ public class AdCampaignServiceImpl implements AdCampaignService {
 	
 	@Override
 	public Optional<AdInfo> getAdCampaign(String partnerId) {
-		return Optional.ofNullable(adCampaignRepository.findOne(partnerId));
+		return adCampaignRepository.findById(partnerId);
 	}
 
 	@Override
 	public void deleteAdCampaign(String partnerId) {
 		Optional<AdInfo> existingAd = getAdCampaign(partnerId);
-		existingAd.ifPresent( s -> adCampaignRepository.delete(s.getPartner()));
+		existingAd.ifPresent( s -> adCampaignRepository.delete(s));
 	}
 
 	
